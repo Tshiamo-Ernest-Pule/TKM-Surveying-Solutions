@@ -1,0 +1,144 @@
+/* ==================================================
+   Revolution Navigation CSS Library
+   Version: 1.0
+   Author: Revolution UI
+   Description: Responsive navigation bar with dropdown and mobile support
+   ================================================== */
+
+:root {
+  --rev-primary: #0d6efd;
+  --rev-dark: #111827;
+  --rev-light: #ffffff;
+  --rev-hover: #1f2937;
+  --rev-transition: all 0.3s ease;
+  --rev-radius: 6px;
+}
+
+/* NAVBAR CONTAINER */
+.rev-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--rev-dark);
+  padding: 0 20px;
+  height: 60px;
+  font-family: Arial, sans-serif;
+}
+
+/* LOGO */
+.rev-navbar .rev-logo {
+  color: var(--rev-light);
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* MENU */
+.rev-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rev-menu li {
+  position: relative;
+}
+
+.rev-menu a {
+  display: block;
+  padding: 18px 20px;
+  color: var(--rev-light);
+  text-decoration: none;
+  transition: var(--rev-transition);
+}
+
+.rev-menu a:hover {
+  background: var(--rev-hover);
+  border-radius: var(--rev-radius);
+}
+
+/* DROPDOWN */
+.rev-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--rev-dark);
+  min-width: 180px;
+  border-radius: var(--rev-radius);
+  overflow: hidden;
+}
+
+.rev-dropdown a {
+  padding: 12px 16px;
+}
+
+.rev-menu li:hover .rev-dropdown {
+  display: block;
+}
+
+/* MOBILE TOGGLE */
+.rev-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.rev-toggle span {
+  background: var(--rev-light);
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+  display: block;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+  .rev-toggle {
+    display: flex;
+  }
+
+  .rev-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: var(--rev-dark);
+    flex-direction: column;
+    display: none;
+  }
+
+  .rev-menu.active {
+    display: flex;
+  }
+
+  .rev-menu li {
+    width: 100%;
+  }
+
+  .rev-dropdown {
+    position: static;
+  }
+}
+
+/* ANIMATION */
+.rev-menu a {
+  position: relative;
+}
+
+.rev-menu a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: var(--rev-primary);
+  transition: var(--rev-transition);
+}
+
+.rev-menu a:hover::after {
+  width: 100%;
+}

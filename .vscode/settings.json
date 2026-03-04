@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/63e802e9-fa12-44cc-b5ad-11d3f1d6e1eb/resourceGroups/Tkmsolutions/providers/Microsoft.Web/sites/TKMsolutions",
+    "appService.deploySubpath": "."
+}
