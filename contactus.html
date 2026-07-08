@@ -8,51 +8,143 @@
     <meta name="description" content="TKM Surveying Solutions and Consulting" />
     <meta name="format-detection" content="telephone=no">
 
-    <!-- FAVICONS ICON -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
 
-    <!-- PAGE TITLE HERE -->
     <title>TKM Surveying</title>
 
-    <!-- MOBILE SPECIFIC -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    <!-- STYLESHEETS -->
+
     <link rel="stylesheet" href="plugins/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/plugins.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link class="skin" rel="stylesheet" type="text/css" href="css/skin/skin-1.css">
     <link rel="stylesheet" type="text/css" href="css/templete.css">
-    <!-- Revolution Slider Css -->
     <link rel="stylesheet" type="text/css" href="plugins/revolution/css/settings.css">
     <link rel="stylesheet" type="text/css" href="plugins/revolution/css/navigation.css">
-    <!-- Revolution Navigation Style -->
 
+    <style>
+        .tkm-service-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .tkm-service-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border: 1.5px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #fff;
+            user-select: none;
+        }
+        .tkm-service-item:hover {
+            border-color: #efbb20;
+            background: #fffbf0;
+        }
+        .tkm-service-item.selected {
+            border-color: #efbb20;
+            background: #fffbf0;
+        }
+        .tkm-service-item input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #efbb20;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .tkm-service-item label {
+            cursor: pointer;
+            font-size: 13px;
+            color: #333;
+            margin: 0;
+            font-weight: 500;
+        }
+        .tkm-group-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #efbb20;
+            margin: 16px 0 8px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #eee;
+        }
+        .tkm-btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: #25D366;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .tkm-btn-em {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: #efbb20;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .tkm-btn-wa:hover { background: #1ebe5d; }
+        .tkm-btn-em:hover { background: #d4a500; }
+        #tkm-error {
+            display: none;
+            color: red;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+        #tkm-ok {
+            display: none;
+            color: green;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        @media (max-width: 600px) {
+            .tkm-service-list { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body id="bg">
-    <div id="loading-area"></div><div class="page-wraper">
-        <!-- header -->
+    <div id="loading-area"></div>
+    <div class="page-wraper">
+
+        <!-- HEADER -->
         <header class="site-header header-style-1 mo-left dark">
-            <!-- main header -->
             <div class="sticky-header header header-curve main-bar-wraper navbar-expand-lg">
-                <div class="main-bar bg-primary clearfix ">
+                <div class="main-bar bg-primary clearfix">
                     <div class="container clearfix">
-                        <!-- website logo -->
-                        <div class="logo-header mostion"><a href="index.html"><img src="images/logo2.png" width="193" height="89" alt=""></a></div>
-                        <!-- nav toggle button -->
-                        <button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                        <div class="logo-header mostion">
+                            <a href="index.html"><img src="images/logo2.png" width="193" height="89" alt=""></a>
+                        </div>
+                        <button class="navbar-toggler collapsed navicon justify-content-end" type="button"
+                            data-toggle="collapse" data-target="#navbarNavDropdown"
+                            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span></span><span></span><span></span>
                         </button>
-                        <!-- main nav -->
                         <div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
-                            <ul class=" nav navbar-nav">
+                            <ul class="nav navbar-nav">
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="aboutus.html">About Us</a></li>
                                 <li><a href="services.html">Services</a></li>
@@ -62,15 +154,14 @@
                     </div>
                 </div>
             </div>
-            <!-- main header END -->
         </header>
-        <!-- header END -->
-        <!-- Content -->
+        <!-- HEADER END -->
+
         <div class="page-content">
-            <!-- inner page banner -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3595.963278501502!2d28.217607315019084!3d-25.672511983677353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ebfdec5182f4023%3A0x2011b8aa95d7bf8c!2s206%20Matlabas%20Ave%2C%20Annlin%2C%20Pretoria%2C%200066!5e0!3m2!1sen!2sza!4v1591281729303!5m2!1sen!2sza" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-            <!-- inner page banner END -->
-            <!-- Breadcrumb row -->
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3595.963278501502!2d28.217607315019084!3d-25.672511983677353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ebfdec5182f4023%3A0x2011b8aa95d7bf8c!2s206%20Matlabas%20Ave%2C%20Annlin%2C%20Pretoria%2C%200066!5e0!3m2!1sen!2sza!4v1591281729303!5m2!1sen!2sza"
+                width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+
             <div class="breadcrumb-row">
                 <div class="container">
                     <ul class="list-inline">
@@ -79,117 +170,196 @@
                     </ul>
                 </div>
             </div>
-            <!-- Breadcrumb row END -->
-            <!-- contact area -->
+
             <div class="section-full content-inner bg-white contact-style-1">
                 <div class="container">
                     <div class="row">
-                        <!-- right part start -->
+
+                        <!-- Quick Contact -->
                         <div class="col-lg-4 d-lg-flex">
                             <div class="p-a30 m-b30 border-1 contact-area align-self-stretch">
                                 <h2 class="m-b10">Quick Contact</h2>
                                 <p>If you have any questions simply use the following contact details.</p>
                                 <ul class="no-margin">
                                     <li class="icon-bx-wraper left m-b30">
-                                        <div class="icon-bx-xs bg-primary"> <a href="#" class="icon-cell"><i class="ti-location-pin"></i></a> </div>
+                                        <div class="icon-bx-xs bg-primary"><a href="#" class="icon-cell"><i class="ti-location-pin"></i></a></div>
                                         <div class="icon-content">
                                             <h6 class="text-uppercase m-tb0 dlab-tilte">Address:</h6>
                                             <p>206 Matlabas Avenue, Sinoville, Pretoria, 0129, South Africa</p>
                                         </div>
                                     </li>
-                                    <li class="icon-bx-wraper left  m-b30">
-                                        <div class="icon-bx-xs bg-primary"> <a href="#" class="icon-cell"><i class="ti-email"></i></a> </div>
+                                    <li class="icon-bx-wraper left m-b30">
+                                        <div class="icon-bx-xs bg-primary"><a href="#" class="icon-cell"><i class="ti-email"></i></a></div>
                                         <div class="icon-content">
                                             <h6 class="text-uppercase m-tb0 dlab-tilte">Email:</h6>
                                             <p>info@tkmcs.co.za</p>
                                         </div>
                                     </li>
                                     <li class="icon-bx-wraper left">
-                                        <div class="icon-bx-xs bg-primary"> <a href="#" class="icon-cell"><i class="ti-mobile"></i></a> </div>
+                                        <div class="icon-bx-xs bg-primary"><a href="#" class="icon-cell"><i class="ti-mobile"></i></a></div>
                                         <div class="icon-content">
-                                            <h6 class="text-uppercase m-tb0 dlab-tilte">PHONE</h6>
+                                            <h6 class="text-uppercase m-tb0 dlab-tilte">Phone</h6>
                                             <p>083 400 8495</p>
                                         </div>
                                     </li>
                                 </ul>
-                                <!--<div class="m-t20">
-                                    <ul class="social-icon dez-border social-icon-lg">
-                                        <li><a href="javascript:void(0);" class="fa fa-facebook bg-primary"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-twitter bg-primary"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-linkedin bg-primary"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-pinterest-p bg-primary"></a></li>
-                                        <li><a href="javascript:void(0);" class="fa fa-google-plus bg-primary"></a></li>
-                                    </ul>
-                                </div>-->
                             </div>
                         </div>
-                        <!-- right part END -->
-                        <!-- Left part start -->
-                        <!--<div class="col-lg-8">
-                            <div class="p-a30 bg-gray clearfix m-b30 ">
-                                <h2>Send Message Us</h2>
-                                <div class="dzFormMsg"></div>
-                                <form method="post" class="dzForm" action="">
-                                    <input type="hidden" value="Contact" name="dzToDo">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <input name="dzName" type="text" required class="form-control" placeholder="Your Name">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <input name="dzEmail" type="email" class="form-control" required placeholder="Your Email">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <input name="dzOther[Phone]" type="text" required class="form-control" placeholder="Phone">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <input name="dzOther[Subject]" type="text" required class="form-control" placeholder="Subject">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <textarea name="dzMessage" rows="4" class="form-control" required placeholder="Your Message..."></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <div class="g-recaptcha" data-sitekey="6LefsVUUAAAAADBPsLZzsNnETChealv6PYGzv3ZN" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
-                                                    <input class="form-control d-none" style="display:none;" data-recaptcha="true" required data-error="Please complete the Captcha">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <button name="submit" type="submit" value="Submit" class="site-button "> <span>Submit</span> </button>
+
+                        <!-- Request Form -->
+                        <div class="col-lg-8">
+                            <div class="p-a30 bg-gray clearfix m-b30">
+                                <h2>Request a Service</h2>
+                                <p style="color:#888; font-size:13px; margin-bottom:20px;">Tick all the services you need, fill in your details, then send directly to us.</p>
+
+                                <!-- SERVICE LIST -->
+                                <div class="tkm-group-label">Land Surveying</div>
+                                <div class="tkm-service-list">
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Land Surveying"><label>Land Surveying</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Cadastral Surveying"><label>Cadastral Surveying</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Engineering Surveying"><label>Engineering Surveying</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Construction Surveying"><label>Construction Surveying</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Topographic Surveying"><label>Topographic Surveying</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Mining Surveying"><label>Mining Surveying</label>
+                                    </div>
+                                </div>
+
+                                <div class="tkm-group-label">Water &amp; Marine</div>
+                                <div class="tkm-service-list">
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Hydrographic Surveying"><label>Hydrographic Surveying</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Bathymetric Surveying"><label>Bathymetric Surveying</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Marine &amp; Offshore Surveying"><label>Marine &amp; Offshore Surveying</label>
+                                    </div>
+                                </div>
+
+                                <div class="tkm-group-label">Remote &amp; Aerial</div>
+                                <div class="tkm-service-list">
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="LiDAR Surveying"><label>LiDAR Surveying</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="UAV/Drone Surveying"><label>UAV / Drone Surveying</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Photogrammetric Surveying"><label>Photogrammetric Surveying</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Remote Sensing"><label>Remote Sensing</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Laser Scanning / 3D Scanning"><label>Laser / 3D Scanning</label>
+                                    </div>
+                                </div>
+
+                                <div class="tkm-group-label">Geospatial &amp; Data</div>
+                                <div class="tkm-service-list">
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Geodetic Surveying"><label>Geodetic Surveying</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="GIS &amp; Geospatial Services"><label>GIS &amp; Geospatial Services</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Mapping &amp; Spatial Data Services"><label>Mapping &amp; Spatial Data</label>
+                                    </div>
+                                </div>
+
+                                <div class="tkm-group-label">Specialist Services</div>
+                                <div class="tkm-service-list">
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Utility Surveying"><label>Utility Surveying</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Deformation &amp; Monitoring Surveys"><label>Deformation &amp; Monitoring</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Environmental Surveying"><label>Environmental Surveying</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Agricultural Surveying"><label>Agricultural Surveying</label>
+                                    </div>
+                                    <div class="tkm-service-item" onclick="tkmToggle(this)">
+                                        <input type="checkbox" value="Survey Consulting &amp; Project Management"><label>Survey Consulting &amp; PM</label>
+                                    </div>
+                                </div>
+
+                                <!-- DETAILS -->
+                                <div class="row" style="margin-top:10px;">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <input id="tkm-name" type="text" class="form-control" placeholder="Your Name *">
                                         </div>
                                     </div>
-                                </form>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <input id="tkm-phone" type="tel" class="form-control" placeholder="Phone Number *">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <input id="tkm-email" type="email" class="form-control" placeholder="Email (optional)">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <input id="tkm-location" type="text" class="form-control" placeholder="Project Location (optional)">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <textarea id="tkm-notes" rows="3" class="form-control" placeholder="Additional notes or requirements (optional)"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SEND BUTTONS -->
+                                <div style="margin-top:6px; flex-wrap:wrap; display:flex; gap:10px;">
+                                    <button class="tkm-btn-wa" onclick="tkmSend('wa')">
+                                        <svg width="16" height="16" fill="#fff" viewBox="0 0 24 24">
+                                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.531 5.856L.058 23.573a.5.5 0 00.61.637l5.888-1.543A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.945 9.945 0 01-5.17-1.445l-.371-.22-3.821 1.002 1.02-3.73-.241-.383A9.945 9.945 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+                                        </svg>
+                                        Send via WhatsApp
+                                    </button>
+                                    <button class="tkm-btn-em" onclick="tkmSend('email')">
+                                        <svg width="16" height="16" fill="none" stroke="#000" stroke-width="2" viewBox="0 0 24 24">
+                                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                            <polyline points="22,6 12,13 2,6"/>
+                                        </svg>
+                                        Send via Email
+                                    </button>
+                                </div>
+
+                                <p id="tkm-error">⚠ Please select at least one service and enter your Name and Phone number.</p>
+                                <p id="tkm-ok">✓ Message opened — we'll be in touch soon!</p>
+
                             </div>
-                        </div>-->
-                        <!-- Left part END -->
+                        </div>
+                        <!-- Form END -->
+
                     </div>
                 </div>
             </div>
-            <!-- contact area  END -->
+
         </div>
-        <!-- Content END-->
-        <!-- Footer -->
+        <!-- CONTENT END -->
+
+        <!-- FOOTER -->
         <footer class="site-footer">
             <div class="footer-top">
                 <div class="container">
@@ -200,7 +370,6 @@
                                     <li><a class="fa fa-facebook"></a></li>
                                     <li><a class="fa fa-twitter"></a></li>
                                     <li><a class="fa fa-linkedin"></a></li>
-                                    <li><a class="fa fa-facebook"></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -221,9 +390,9 @@
                                 <h4 class="m-b15 text-uppercase">Contact us</h4>
                                 <div class="separator bg-primary"></div>
                                 <ul>
-                                    <li><i class="fa fa-map-marker"></i><strong>address</strong> 206 Matlabas Avenue, Sinoville, Pretoria, 0129, South Africa </li>
-                                    <li><i class="fa fa-phone"></i><strong>phone</strong>083 400 8495</li>
-                                    <li><i class="fa fa-mail-forward"></i><strong>email</strong>info@tkmcs.co.za</li>
+                                    <li><i class="fa fa-map-marker"></i><strong>address</strong> 206 Matlabas Avenue, Sinoville, Pretoria, 0129, South Africa</li>
+                                    <li><i class="fa fa-phone"></i><strong>phone</strong> 083 400 8495</li>
+                                    <li><i class="fa fa-mail-forward"></i><strong>email</strong> info@tkmcs.co.za</li>
                                 </ul>
                             </div>
                         </div>
@@ -231,29 +400,87 @@
                 </div>
             </div>
         </footer>
-        <!-- Footer END-->
-        <!-- scroll top button -->
+        <!-- FOOTER END -->
+
         <button class="scroltop fa fa-arrow-up"></button>
     </div>
-    <!-- JavaScript  files ========================================= -->
-    <script src="js/jquery.min.js"></script><!-- JQUERY.MIN JS -->
-    <script src="plugins/bootstrap/js/popper.min.js"></script><!-- BOOTSTRAP.MIN JS -->
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script><!-- BOOTSTRAP.MIN JS -->
-    <script src="plugins/bootstrap-select/bootstrap-select.min.js"></script><!-- FORM JS -->
-    <script src="plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script><!-- FORM JS -->
-    <script src="plugins/magnific-popup/magnific-popup.js"></script><!-- MAGNIFIC POPUP JS -->
-    <script src="plugins/counter/waypoints.min.js"></script><!-- WAYPOINTS JS -->
-    <script src="plugins/counter/counterup.min.js"></script><!-- COUNTERUP JS -->
-    <script src="plugins/imagesloaded/imagesloaded.js"></script><!-- IMAGESLOADED -->
-    <script src="plugins/masonry/masonry-3.1.4.js"></script><!-- MASONRY -->
-    <script src="plugins/masonry/masonry.filter.js"></script><!-- MASONRY -->
-    <script src="plugins/owl-carousel/owl.carousel.js"></script><!-- OWL SLIDER -->
-    <script src="js/custom.js"></script><!-- CUSTOM FUCTIONS  -->
-    <script src="js/dz.carousel.js"></script><!-- SORTCODE FUCTIONS  -->
-    <script src="plugins/switcher/js/switcher.js"></script><!-- CONTACT JS  -->
-    <script src='https://www.google.com/recaptcha/api.js'></script> <!-- Google API For Recaptcha  -->
-    <script src="js/dz.ajax.js"></script><!-- CONTACT JS  -->
+
+    <!-- SCRIPTS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="plugins/bootstrap/js/popper.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+    <script src="plugins/magnific-popup/magnific-popup.js"></script>
+    <script src="plugins/counter/waypoints.min.js"></script>
+    <script src="plugins/counter/counterup.min.js"></script>
+    <script src="plugins/imagesloaded/imagesloaded.js"></script>
+    <script src="plugins/masonry/masonry-3.1.4.js"></script>
+    <script src="plugins/masonry/masonry.filter.js"></script>
+    <script src="plugins/owl-carousel/owl.carousel.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/dz.carousel.js"></script>
+    <script src="plugins/switcher/js/switcher.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="js/dz.ajax.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        // ── UPDATE THESE ──────────────────────
+        var TKM_WHATSAPP = '27834008495';
+        var TKM_EMAIL    = 'info@tkmcs.co.za';
+        // ─────────────────────────────────────
+
+        function tkmToggle(el) {
+            var cb = el.querySelector('input[type="checkbox"]');
+            cb.checked = !cb.checked;
+            el.classList.toggle('selected', cb.checked);
+        }
+
+        function tkmGetServices() {
+            var checked = document.querySelectorAll('.tkm-service-item input[type="checkbox"]:checked');
+            var services = [];
+            checked.forEach(function(cb) { services.push(cb.value); });
+            return services;
+        }
+
+        function tkmSend(method) {
+            var services  = tkmGetServices();
+            var name      = document.getElementById('tkm-name').value.trim();
+            var phone     = document.getElementById('tkm-phone').value.trim();
+            var email     = document.getElementById('tkm-email').value.trim();
+            var location  = document.getElementById('tkm-location').value.trim();
+            var notes     = document.getElementById('tkm-notes').value.trim();
+            var err       = document.getElementById('tkm-error');
+            var ok        = document.getElementById('tkm-ok');
+
+            if (services.length === 0 || !name || !phone) {
+                err.style.display = 'block';
+                ok.style.display  = 'none';
+                return;
+            }
+            err.style.display = 'none';
+
+            var msg = 'TKM Surveying \u2013 Service Request'
+                    + '\n\nServices Requested:\n- ' + services.join('\n- ')
+                    + '\n\nName: '  + name
+                    + '\nPhone: '   + phone
+                    + (email    ? '\nEmail: '    + email    : '')
+                    + (location ? '\nLocation: ' + location : '')
+                    + (notes    ? '\nNotes: '    + notes    : '');
+
+            if (method === 'wa') {
+                window.open('https://wa.me/' + TKM_WHATSAPP + '?text=' + encodeURIComponent(msg), '_blank');
+            } else {
+                var subject = services.length === 1
+                    ? 'Service Request \u2013 ' + services[0]
+                    : 'Service Request \u2013 Multiple Services';
+                window.location.href = 'mailto:' + TKM_EMAIL
+                    + '?subject=' + encodeURIComponent(subject)
+                    + '&body='    + encodeURIComponent(msg);
+            }
+            ok.style.display = 'block';
+        }
+    </script>
 
 </body>
 </html>
