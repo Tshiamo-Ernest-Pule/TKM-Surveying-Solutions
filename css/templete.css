@@ -3553,4 +3553,444 @@ footer.clear-sef-footer h4 {
 	.filters-style1 {
 		margin-bottom: 30px;
 	}
+	
+}
+/* =====================================================
+   TKM SURVEYING THEME V2  (blue shades + near-black + white)
+   Paste at the very BOTTOM of css/templete.css.
+   If you pasted the first theme before, DELETE it first.
+===================================================== */
+
+:root {
+    --ink:      #05080f;   /* near-black */
+    --navy:     #0a1a3f;   /* deep navy */
+    --blue-800: #0b3bb8;   /* dark blue */
+    --blue-600: #1f5eff;   /* main blue */
+    --blue-400: #4d8dff;   /* bright blue (use on dark) */
+    --blue-200: #bcd4ff;   /* soft blue */
+    --blue-50:  #eef4ff;   /* very light blue */
+    --white:    #ffffff;
+}
+
+/* ---------- Base ---------- */
+body, .page-wraper { background: var(--white); }
+body { color: #2b3445; }
+h1, h2, h3, h4, h5, h6 {
+    color: var(--ink);
+    font-family: 'Montserrat', 'Nunito', sans-serif;
+}
+a { color: var(--blue-600); }
+a:hover, a:focus, a:active { color: var(--blue-800); }
+::selection { background: var(--blue-600); color: var(--white); }
+::-moz-selection { background: var(--blue-600); color: var(--white); }
+
+.bg-primary,
+.separator.bg-primary { background-color: var(--blue-600); }
+.text-primary { color: var(--blue-600); }
+
+/* ---------- Header: near-black with blue accent line ---------- */
+.site-header .main-bar.bg-primary {
+    background-color: var(--ink);
+    border-bottom: 3px solid var(--blue-600);
+}
+.header-curve .logo-header:before,
+.header-curve .logo-header:after { background-color: var(--white); }
+
+@media only screen and (min-width: 992px) {
+    .site-header.header-style-1 .main-bar .header-nav .nav > li > a {
+        color: var(--white);
+        opacity: 1;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+    }
+    .site-header.header-style-1 .main-bar .header-nav .nav > li.active > a,
+    .site-header.header-style-1 .main-bar .header-nav .nav > li:hover > a {
+        color: var(--blue-400);
+        opacity: 1;
+        font-weight: 700;
+    }
+    .header-style-1 .header-nav .nav > li.active > a:after,
+    .header-style-1 .header-nav .nav > li:hover > a:after {
+        background: var(--blue-400);
+    }
+}
+@media only screen and (max-width: 991px) {
+    [class*="bg-"] .header-nav .nav > li.active > a,
+    [class*="bg-"] .header-nav .nav > li:hover > a,
+    [class*="bg-"] .header-nav .nav > li.current-menu-item > a { color: var(--blue-600); }
+    .header-nav .nav > li > a:hover { background-color: var(--blue-50); }
+}
+
+/* ---------- Site buttons (header Contact Us etc.) ---------- */
+.site-button,
+.site-button.white {
+    background-color: var(--blue-600);
+    color: var(--white);
+}
+.site-button:hover, .site-button:focus, .site-button:active,
+.site-button.white:hover, .site-button.white:focus, .site-button.white:active {
+    background-color: var(--blue-800);
+    color: var(--white);
+}
+.skew-primary:after,
+.skew-secondry:after { background: var(--blue-400); }
+
+/* ---------- Slider ---------- */
+.tp-bannertimer.tp-bottom,
+.tp-bannertimer.tp-bottom.bg-primary { background-color: var(--blue-400); }
+.main-slider .erinyen.tparrows,
+.main-slider .erinyen .tp-arr-img-over { background: rgba(5, 8, 15, 0.55); }
+
+/* ---------- HOME: intro card (overlaps the slider) ---------- */
+.tkm-intro {
+    position: relative;
+    z-index: 20;
+    margin-top: -90px;
+    padding-bottom: 70px;
+}
+.tkm-intro-card {
+    background: linear-gradient(135deg, var(--ink) 0%, var(--navy) 55%, var(--blue-800) 100%);
+    border-radius: 10px;
+    padding: 52px 56px;
+    box-shadow: 0 25px 60px rgba(5, 8, 15, 0.35);
+    border-left: 6px solid var(--blue-400);
+}
+.tkm-eyebrow {
+    display: inline-block;
+    color: var(--blue-200);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+.tkm-intro-card h1 {
+    color: var(--white);
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 800;
+    margin: 0 0 16px;
+    max-width: 760px;
+}
+.tkm-intro-card p {
+    color: var(--blue-200);
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 0 28px;
+    text-align: left;
+}
+.tkm-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 6px;
+    margin: 0 12px 10px 0;
+    border: 2px solid transparent;
+    transition: all 0.2s linear;
+}
+.tkm-btn-primary { background: var(--blue-600); color: var(--white); }
+.tkm-btn-primary:hover { background: var(--blue-400); color: var(--ink); }
+.tkm-btn-ghost { border-color: var(--white); color: var(--white); background: transparent; }
+.tkm-btn-ghost:hover { background: var(--white); color: var(--ink); }
+.tkm-btn-white { background: var(--white); color: var(--blue-800); }
+.tkm-btn-white:hover { background: var(--ink); color: var(--white); }
+
+/* ---------- HOME: services ---------- */
+.tkm-services {
+    background: var(--blue-50);
+    padding: 80px 0 90px;
+}
+.tkm-head { text-align: center; margin-bottom: 48px; }
+.tkm-head h2 {
+    font-size: 34px;
+    font-weight: 800;
+    margin: 0 0 14px;
+    color: var(--ink);
+}
+.tkm-head h2:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--blue-600);
+    border-radius: 2px;
+    margin: 14px auto 0;
+}
+.tkm-head p { text-align: center; max-width: 560px; margin: 0 auto; color: #4a5568; }
+.tkm-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+.tkm-card {
+    display: block;
+    background: var(--white);
+    border-top: 4px solid var(--blue-600);
+    border-radius: 8px;
+    padding: 34px 26px;
+    box-shadow: 0 10px 30px rgba(10, 26, 63, 0.08);
+    transition: all 0.25s ease;
+}
+.tkm-card .tkm-icon {
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    border-radius: 50%;
+    background: var(--blue-50);
+    color: var(--blue-600);
+    font-size: 26px;
+    margin-bottom: 20px;
+    transition: all 0.25s ease;
+}
+.tkm-card h3 { font-size: 19px; font-weight: 700; margin: 0 0 10px; color: var(--ink); }
+.tkm-card p { text-align: left; font-size: 15px; line-height: 1.7; margin: 0; color: #4a5568; }
+.tkm-card:hover {
+    background: var(--navy);
+    border-top-color: var(--blue-400);
+    transform: translateY(-8px);
+}
+.tkm-card:hover h3 { color: var(--white); }
+.tkm-card:hover p { color: var(--blue-200); }
+.tkm-card:hover .tkm-icon { background: var(--blue-600); color: var(--white); }
+
+/* ---------- HOME: call-to-action band ---------- */
+.tkm-cta {
+    background: linear-gradient(90deg, var(--blue-800) 0%, var(--blue-600) 100%);
+    padding: 50px 0;
+}
+.tkm-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.tkm-cta h2 { color: var(--white); font-size: 28px; font-weight: 800; margin: 0 0 6px; }
+.tkm-cta p { color: var(--blue-200); margin: 0; text-align: left; font-size: 17px; }
+
+/* ---------- Footer: near-black ---------- */
+.footer-top {
+    background: var(--ink);
+    border-top: 4px solid var(--blue-600);
+}
+.footer-bottom {
+    background: #000000;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 18px 0;
+    text-align: center;
+    font-size: 14px;
+    color: var(--blue-200);
+}
+footer, footer p, footer strong, footer b,
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6,
+footer a, footer a:visited { color: var(--white); }
+footer a:hover, footer a:focus, footer a:active,
+.site-footer .widget_services ul li a:hover { color: var(--blue-400); }
+footer .separator.bg-primary { background-color: var(--blue-400); }
+footer .widget_services ul li:before,
+footer .widget_getintuch i { color: var(--blue-400); }
+footer .widget_services ul li { border-bottom: 1px dashed rgba(255, 255, 255, 0.18); }
+.social-icon.dez-border li a {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--white);
+}
+.social-icon.dez-border li a:hover {
+    background: var(--blue-600);
+    border-color: var(--blue-600);
+}
+
+/* ---------- Scroll-to-top ---------- */
+button.scroltop {
+    background: var(--blue-600);
+    border-color: var(--blue-600);
+    color: var(--white);
+}
+button.scroltop:hover { background: var(--ink); color: var(--white); }
+
+/* ---------- Other accents (inner pages) ---------- */
+.header-nav .nav > li .sub-menu li a:hover,
+.header-nav .nav > li .sub-menu li:hover > a { color: var(--blue-600); }
+blockquote { border-left-color: var(--blue-600); }
+blockquote:before { color: var(--blue-600); }
+.pagination > .active > a, .pagination > .active > span { background-color: var(--blue-600); }
+.list-num-count > li:before { background: var(--blue-600); }
+.owl-prev, .owl-next { background-color: var(--ink); border-color: var(--ink); }
+.owl-prev:hover, .owl-next:hover { background-color: var(--blue-600); border-color: var(--blue-600); }
+.form-control:focus { border-color: var(--blue-600); }
+
+/* ---------- Responsive ---------- */
+@media only screen and (max-width: 991px) {
+    .tkm-grid { grid-template-columns: repeat(2, 1fr); }
+    .tkm-intro { margin-top: -50px; }
+    .tkm-intro-card { padding: 38px 30px; }
+    .tkm-intro-card h1 { font-size: 32px; }
+}
+@media only screen and (max-width: 575px) {
+    .tkm-grid { grid-template-columns: 1fr; }
+    .tkm-intro { margin-top: -30px; padding-bottom: 50px; }
+    .tkm-intro-card { padding: 28px 20px; }
+    .tkm-intro-card h1 { font-size: 26px; }
+    .tkm-intro-card p { font-size: 16px; }
+    .tkm-services { padding: 55px 0 60px; }
+    .tkm-head h2 { font-size: 27px; }
+    .tkm-cta h2 { font-size: 23px; }
+}
+/* =====================================================
+   TKM INNER PAGES ADD-ON  (About, Services, Portfolio, Contact)
+   Paste at the very BOTTOM of css/templete.css,
+   BELOW the V2 theme block. Needs the V2 block above it.
+===================================================== */
+
+/* ---------- Page banner ---------- */
+.bnr-inr { height: 320px; }
+.bnr-inr.overlay-black-middle:after {
+    background: linear-gradient(135deg, rgba(5, 8, 15, 0.92) 0%, rgba(10, 26, 63, 0.82) 55%, rgba(11, 59, 184, 0.65) 100%);
+    opacity: 1;
+}
+.bnr-inr h1 {
+    color: var(--white);
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0;
+}
+.bnr-inr h1:after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: var(--blue-400);
+    border-radius: 2px;
+    margin: 16px auto 0;
+}
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb-row {
+    background: rgba(5, 8, 15, 0.88);
+    border-top: 3px solid var(--blue-600);
+    padding: 16px 0;
+}
+.breadcrumb-row ul li,
+.breadcrumb-row ul li:last-child { color: var(--white); }
+.breadcrumb-row ul li a { color: var(--blue-200); }
+.breadcrumb-row ul li a:hover { color: var(--white); }
+
+/* ---------- General inner content ---------- */
+.page-content p { text-align: left; }
+.section-head h3.h3 { font-size: 32px; font-weight: 800; color: var(--ink); }
+.separator.bg-primary { background-color: var(--blue-600); height: 4px; border-radius: 2px; }
+
+/* ---------- About ---------- */
+.content-inner-2 .worker img {
+    border-radius: 10px;
+    box-shadow: 0 20px 45px rgba(10, 26, 63, 0.22);
+}
+.content-inner-2 h3.m-t10 {
+    border-left: 4px solid var(--blue-600);
+    padding-left: 14px;
+    margin-top: 26px;
+    font-weight: 800;
+}
+.content-inner-2 .icon-bx-wraper.left {
+    background: var(--blue-50);
+    border-top: 4px solid var(--blue-600);
+    border-radius: 8px;
+    padding: 24px;
+    transition: all 0.25s ease;
+}
+.content-inner-2 .icon-bx-wraper.left:hover {
+    background: var(--navy);
+    transform: translateY(-6px);
+}
+.content-inner-2 .icon-bx-wraper.left:hover h4,
+.content-inner-2 .icon-bx-wraper.left:hover .icon-cell { color: var(--white); }
+.content-inner-2 .icon-bx-wraper.left:hover p { color: var(--blue-200); }
+.icon-bx-wraper .icon-cell { color: var(--blue-600); }
+.icon-bx-wraper h4.tilte { font-weight: 800; color: var(--ink); }
+
+/* team cards */
+.box .info.border-1 {
+    background: var(--white);
+    border: 1px solid #dbe5ff;
+    border-top: 4px solid var(--blue-600);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(10, 26, 63, 0.06);
+    transition: all 0.25s ease;
+}
+.box:hover .info.border-1 {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(10, 26, 63, 0.16);
+}
+.box .info h4.title a { color: var(--ink); font-weight: 800; }
+.box .info > span { color: var(--blue-600); font-weight: 700; }
+.skew-content-box { background: var(--blue-600); }
+
+/* ---------- Services ---------- */
+.site-filters .site-button-secondry,
+.site-button-secondry {
+    background: var(--ink);
+    color: var(--white);
+    border-radius: 6px;
+}
+.site-button-secondry:hover,
+.site-button-secondry:focus { background: var(--blue-800); color: var(--white); }
+.site-filters .active > [class*="site-button"] {
+    background: var(--blue-600);
+    color: var(--white);
+}
+.gallery-listing .gallery-box {
+    background: var(--white);
+    border: 1px solid #dbe5ff;
+    border-top: 4px solid var(--blue-600);
+    border-radius: 8px;
+    padding: 26px;
+    box-shadow: 0 8px 24px rgba(10, 26, 63, 0.06);
+    transition: all 0.25s ease;
+}
+.gallery-listing .gallery-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(10, 26, 63, 0.16);
+}
+.gallery-box h2 { font-size: 22px; font-weight: 800; margin: 0 0 12px; color: var(--ink); }
+.gallery-box .thum { border-radius: 6px; overflow: hidden; }
+.img-overlay1:before,
+.img-overlay1:after { background: var(--navy); }
+
+/* ---------- Portfolio ---------- */
+.box h4.title.m-t0 {
+    border-left: 4px solid var(--blue-600);
+    padding-left: 12px;
+    font-weight: 800;
+    color: var(--ink);
+    margin-bottom: 14px;
+}
+.box .media {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 28px rgba(10, 26, 63, 0.14);
+}
+.box .media img { transition: transform 0.4s ease; }
+.box:hover .media img { transform: scale(1.06); }
+
+/* ---------- Contact page (form colours were yellow) ---------- */
+.contact-style-1 .bg-gray { background: var(--blue-50); }
+.contact-style-1 .tkm-service-item:hover,
+.contact-style-1 .tkm-service-item.selected {
+    border-color: var(--blue-600);
+    background: var(--blue-50);
+}
+.contact-style-1 .tkm-service-item input[type="checkbox"] { accent-color: var(--blue-600); }
+.contact-style-1 .tkm-group-label { color: var(--blue-600); }
+.contact-style-1 .tkm-btn-em { background: var(--blue-600); color: var(--white); }
+.contact-style-1 .tkm-btn-em:hover { background: var(--blue-800); }
+.contact-style-1 .tkm-btn-em svg { stroke: var(--white); }
+.contact-style-1 .icon-bx-xs.bg-primary { background: var(--blue-600); }
+
+/* ---------- Responsive ---------- */
+@media only screen and (max-width: 767px) {
+    .bnr-inr { height: 240px; }
+    .bnr-inr h1 { font-size: 30px; }
 }

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -8,43 +8,85 @@
     <meta name="description" content="TKM Surveying Solutions and Consulting" />
     <meta name="format-detection" content="telephone=no">
 
-    <!-- FAVICONS ICON -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
 
-    <!-- PAGE TITLE HERE -->
-    <title>TKM Surveying</title>
+    <title>Our Services | TKM Surveying</title>
 
-    <!-- MOBILE SPECIFIC -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;700;800&display=swap">
     <link rel="stylesheet" href="plugins/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/plugins.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link class="skin" rel="stylesheet" type="text/css" href="css/skin/skin-1.css">
     <link rel="stylesheet" type="text/css" href="css/templete.css">
-    <!-- Revolution Slider Css -->
     <link rel="stylesheet" type="text/css" href="plugins/revolution/css/settings.css">
     <link rel="stylesheet" type="text/css" href="plugins/revolution/css/navigation.css">
-    <!-- Revolution Navigation Style -->
-
+    <style>
+        :root { --ink:#05080f; --navy:#0a1a3f; --blue-800:#0b3bb8; --blue-600:#1f5eff; --blue-400:#4d8dff; --blue-200:#bcd4ff; --blue-50:#eef4ff; }
+        html { scroll-behavior: smooth; }
+        .tkm-gpr { padding: 80px 0 60px; background: #ffffff; scroll-margin-top: 90px; }
+        .tkm-gpr-title { font-size: 34px; font-weight: 800; line-height: 1.2; margin: 0 0 10px; color: var(--ink); }
+        .tkm-gpr-title:after { content: ""; display: block; width: 60px; height: 4px; background: var(--blue-600); border-radius: 2px; margin-top: 14px; }
+        .tkm-gpr-sub { font-size: 20px; font-weight: 700; color: var(--blue-600); margin: 18px 0 18px; line-height: 1.4; }
+        .tkm-gpr p { text-align: left; line-height: 1.8; }
+        .tkm-gpr-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .tkm-fig { margin: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 28px rgba(10, 26, 63, 0.16); cursor: zoom-in; background: var(--blue-50); }
+        .tkm-fig img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+        .tkm-fig:hover img { transform: scale(1.05); }
+        .tkm-gpr-photos .tkm-fig { aspect-ratio: 3 / 4; }
+        .tkm-apps-title { font-size: 24px; font-weight: 800; margin: 20px 0 22px; color: var(--ink); }
+        .tkm-apps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 40px; }
+        .tkm-app { display: flex; gap: 18px; background: var(--blue-50); border-top: 4px solid var(--blue-600); border-radius: 8px; padding: 24px; transition: all 0.25s ease; }
+        .tkm-app:hover { background: var(--navy); transform: translateY(-6px); }
+        .tkm-app-icon { flex: 0 0 52px; width: 52px; height: 52px; line-height: 52px; text-align: center; border-radius: 50%; background: var(--white, #fff); color: var(--blue-600); font-size: 22px; background: #ffffff; }
+        .tkm-app h4 { font-size: 18px; font-weight: 800; margin: 0 0 8px; color: var(--ink); }
+        .tkm-app p { margin: 0; font-size: 15px; line-height: 1.7; color: #4a5568; text-align: left; }
+        .tkm-app:hover h4 { color: #ffffff; }
+        .tkm-app:hover p { color: var(--blue-200); }
+        .tkm-commit { background: linear-gradient(135deg, var(--ink) 0%, var(--navy) 60%, var(--blue-800) 100%); border-left: 6px solid var(--blue-400); border-radius: 10px; padding: 34px 38px; margin-bottom: 24px; }
+        .tkm-commit h3 { color: #ffffff; font-size: 24px; font-weight: 800; margin: 0 0 12px; }
+        .tkm-commit p { color: var(--blue-200); margin: 0; font-size: 17px; line-height: 1.8; }
+        .tkm-disclaimer { background: var(--blue-50); border-left: 4px solid var(--blue-600); border-radius: 4px; padding: 16px 20px; font-size: 14px; color: #4a5568; margin: 0; }
+        .tkm-field { background: var(--blue-50); padding: 80px 0 90px; }
+        .tkm-gallery { column-count: 3; column-gap: 16px; }
+        .tkm-gallery .tkm-fig { break-inside: avoid; margin-bottom: 16px; display: block; }
+        .tkm-gallery .tkm-fig img { height: auto; }
+        .tkm-video { cursor: default; background: #000; }
+        .tkm-video video { width: 100%; display: block; }
+        .tkm-more { font-weight: 700; color: var(--blue-600); }
+        .gallery-box .thum img.tkm-crop { height: 260px; width: 100%; object-fit: cover; object-position: center 60%; }
+        .tkm-lb { display: none; position: fixed; inset: 0; background: rgba(5, 8, 15, 0.92); z-index: 10000; align-items: center; justify-content: center; padding: 24px; cursor: zoom-out; }
+        .tkm-lb.on { display: flex; }
+        .tkm-lb img { max-width: 100%; max-height: 100%; border-radius: 6px; }
+        .tkm-lb span { position: absolute; top: 14px; right: 22px; color: #ffffff; font-size: 38px; line-height: 1; }
+        @media (max-width: 991px) {
+            .tkm-gallery { column-count: 2; }
+            .tkm-apps { grid-template-columns: 1fr; }
+            .tkm-gpr { padding: 60px 0 40px; }
+        }
+        @media (max-width: 575px) {
+            .tkm-gallery { column-count: 1; }
+            .tkm-gpr-title { font-size: 27px; }
+            .tkm-commit { padding: 26px 22px; }
+            .tkm-field { padding: 55px 0 60px; }
+        }
+    </style>
 </head>
 <body id="bg">
-    <div id="loading-area"></div><div class="page-wraper">
+    <div id="loading-area"></div>
+    <div class="page-wraper">
         <!-- header -->
         <header class="site-header header-style-1 mo-left dark">
-            <!-- main header -->
             <div class="sticky-header header header-curve main-bar-wraper navbar-expand-lg">
                 <div class="main-bar bg-primary clearfix ">
                     <div class="container clearfix">
-                        <!-- website logo -->
                         <div class="logo-header mostion"><a href="index.html"><img src="images/logo2.png" width="193" height="89" alt=""></a></div>
-                        <!-- nav toggle button -->
                         <button class="navbar-toggler collapsed navicon justify-content-end" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                             <span></span>
                             <span></span>
@@ -55,10 +97,9 @@
                                 <a href="contactus.html" class="site-button white skew-secondry">Contact Us</a>
                             </div>
                         </div>
-                        <!-- main nav -->
                         <div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
                             <ul class=" nav navbar-nav">
-                                <li><a href="#">Home</a></li>
+                                <li><a href="index.html">Home</a></li>
                                 <li><a href="aboutus.html">About Us</a></li>
                                 <li class="active"><a href="services.html">Services</a></li>
                                 <li><a href="portfolio.html">Portfolio</a></li>
@@ -68,10 +109,8 @@
                     </div>
                 </div>
             </div>
-            <!-- main header END -->
         </header>
         <!-- header END -->
-        <!-- Content -->
         <div class="page-content">
             <!-- inner page banner -->
             <div class="bnr-inr overlay-black-middle" style="background-image:url(images/transnet.jpg);">
@@ -81,8 +120,6 @@
                     </div>
                 </div>
             </div>
-            <!-- inner page banner END -->
-            <!-- Breadcrumb row -->
             <div class="breadcrumb-row">
                 <div class="container">
                     <ul class="list-inline">
@@ -91,11 +128,8 @@
                     </ul>
                 </div>
             </div>
-            <!-- Breadcrumb row END -->
             <div class="content-area">
-                <!-- Left & right section start -->
                 <div class="container">
-                    <!-- Gallery -->
                     <div class="site-filters clearfix center  m-b40">
                         <ul class="filters" data-toggle="buttons">
                             <li data-filter="" class="btn active">
@@ -112,11 +146,15 @@
                             </li>
                             <li data-filter="survey" class="btn">
                                 <input type="radio">
-                                <a href="#" class="site-button-secondry "><span>Surveying</span></a>
+                                <a href="#" class="site-button-secondry"><span>Surveying</span></a>
                             </li>
                             <li data-filter="ohs" class="btn">
                                 <input type="radio">
                                 <a href="#" class="site-button-secondry"><span>OHS</span></a>
+                            </li>
+                            <li data-filter="gpr" class="btn">
+                                <input type="radio">
+                                <a href="#" class="site-button-secondry"><span>GPR</span></a>
                             </li>
                         </ul>
                     </div>
@@ -183,19 +221,172 @@
                                     <p>Implementation of Occupational Health and Safety Act. Risk Assessment.Training and Awareness.</p>
                                     <p>Safety audit. Safety Plans. Safety Files.</p>
                                     <div class="thum img-overlay1 img-effect zoom-slow">
-                                       <img src="images/ohs.png" alt="">
+                                        <img src="images/ohs.png" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="gpr card-container col-lg-6 col-md-6 col-sm-6 col-6">
+                                <div class="box gallery-box">
+                                    <h2>Ground Penetrating Radar (GPR)</h2>
+                                    <p>Advanced Underground Detection and Mapping Solutions</p>
+                                    <p>TKM Surveying Solutions and Consulting offers Ground Penetrating Radar (GPR) services to support the detection, investigation and mapping of subsurface features without the need for extensive excavation.</p>
+                                    <p><a class="tkm-more" href="#gpr">Read more &rarr;</a></p>
+                                    <div class="thum img-overlay1 img-effect zoom-slow">
+                                        <img class="tkm-crop" src="images/tkm-gpr-unit.jpg" alt="GPR unit with GNSS antenna">
                                     </div>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                    <!-- Gallery END -->
                 </div>
-                <!-- Left & right section  END -->
             </div>
+
+            <!-- GPR services -->
+            <section class="tkm-gpr" id="gpr">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 m-b30">
+                            <h2 class="tkm-gpr-title">Ground Penetrating Radar (GPR) Services</h2>
+                            <h3 class="tkm-gpr-sub">Advanced Underground Detection and Mapping Solutions</h3>
+                            <p>TKM Surveying Solutions and Consulting offers Ground Penetrating Radar (GPR) services to support the detection, investigation and mapping of subsurface features without the need for extensive excavation.</p>
+                            <p>Using non-invasive geophysical technology, GPR surveys help identify and locate underground utilities, buried infrastructure and other subsurface anomalies. These services assist engineers, contractors, developers and project managers in making informed decisions, improving site safety and reducing the risk of costly damage during excavation and construction.</p>
+                        </div>
+                        <div class="col-lg-5 m-b30">
+                            <div class="tkm-gpr-photos">
+                                <figure class="tkm-fig" data-full="images/tkm-gpr-unit.jpg"><img src="images/tkm-gpr-unit.jpg" width="1050" height="1400" loading="lazy" alt="GPR unit with GNSS antenna"></figure>
+                                <figure class="tkm-fig" data-full="images/tkm-utility-trench.jpg"><img src="images/tkm-utility-trench.jpg" width="1050" height="1400" loading="lazy" alt="Trench exposing underground services on a city street"></figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="tkm-apps-title">Our GPR Applications Include:</h3>
+                    <div class="tkm-apps">
+                    <div class="tkm-app">
+                        <div class="tkm-app-icon"><i class="fa fa-bolt"></i></div>
+                        <div>
+                            <h4>Underground Utility Detection</h4>
+                            <p>Locating buried water pipes, electrical cables, telecommunications lines and other underground services where detectable.</p>
+                        </div>
+                    </div>
+                    <div class="tkm-app">
+                        <div class="tkm-app-icon"><i class="fa fa-map-o"></i></div>
+                        <div>
+                            <h4>Subsurface Mapping</h4>
+                            <p>Investigating buried structures, obstructions and subsurface anomalies.</p>
+                        </div>
+                    </div>
+                    <div class="tkm-app">
+                        <div class="tkm-app-icon"><i class="fa fa-building-o"></i></div>
+                        <div>
+                            <h4>Construction and Engineering Support</h4>
+                            <p>Providing subsurface information for infrastructure development, site investigations and construction planning.</p>
+                        </div>
+                    </div>
+                    <div class="tkm-app">
+                        <div class="tkm-app-icon"><i class="fa fa-th-large"></i></div>
+                        <div>
+                            <h4>Concrete Scanning</h4>
+                            <p>Identifying embedded services, reinforcement and other detectable features within concrete structures, subject to suitable equipment and survey conditions.</p>
+                        </div>
+                    </div>
+                    <div class="tkm-app">
+                        <div class="tkm-app-icon"><i class="fa fa-exclamation-triangle"></i></div>
+                        <div>
+                            <h4>Pre-Excavation Investigations</h4>
+                            <p>Supporting safer excavation, trenching, drilling and foundation works.</p>
+                        </div>
+                    </div>
+                    <div class="tkm-app">
+                        <div class="tkm-app-icon"><i class="fa fa-clone"></i></div>
+                        <div>
+                            <h4>Surveying and Mapping Integration</h4>
+                            <p>Integrating GPR findings with topographical survey data and CAD deliverables to provide a more comprehensive understanding of site conditions.</p>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="tkm-commit">
+                        <h3>Our Commitment</h3>
+                        <p>At TKMCS Group, we aim to deliver reliable subsurface investigation solutions that complement our surveying services. By combining modern detection technology with professional surveying and mapping expertise, we help clients improve project planning, minimise excavation risks and make better-informed engineering decisions.</p>
+                    </div>
+                    <p class="tkm-disclaimer">GPR results are dependent on ground conditions, material composition, target depth, target size and equipment capabilities. GPR findings should be interpreted alongside other available utility records and detection methods where appropriate.</p>
+                </div>
+            </section>
+
+            <!-- Photo gallery -->
+            <section class="tkm-field">
+                <div class="container">
+                    <div class="tkm-head">
+                        <h2>Our Work in the Field</h2>
+                        <p>A look at our team and equipment on site.</p>
+                    </div>
+                    <div class="tkm-gallery">
+                    <figure class="tkm-fig" data-full="images/tkm-total-station.jpg">
+                        <img src="images/tkm-total-station.jpg" width="1050" height="1400" loading="lazy" alt="Total station set up on a city street project">
+                    </figure>
+                    <figure class="tkm-fig" data-full="images/tkm-field-01.jpg">
+                        <img src="images/tkm-field-01.jpg" width="1400" height="1050" loading="lazy" alt="Excavated pond and manhole during setting out">
+                    </figure>
+                    <figure class="tkm-fig" data-full="images/tkm-field-02.jpg">
+                        <img src="images/tkm-field-02.jpg" width="1050" height="1400" loading="lazy" alt="Surveyors setting out beside a deep excavation">
+                    </figure>
+                    <figure class="tkm-fig" data-full="images/tkm-field-03.jpg">
+                        <img src="images/tkm-field-03.jpg" width="1050" height="1400" loading="lazy" alt="Survey team and total station on a building platform">
+                    </figure>
+                    <figure class="tkm-fig" data-full="images/tkm-field-04.jpg">
+                        <img src="images/tkm-field-04.jpg" width="1400" height="1050" loading="lazy" alt="Column foundations and formwork on site">
+                    </figure>
+                    <figure class="tkm-fig" data-full="images/tkm-field-05.jpg">
+                        <img src="images/tkm-field-05.jpg" width="1050" height="1400" loading="lazy" alt="GNSS receiver on a tripod in the field">
+                    </figure>
+                    <figure class="tkm-fig tkm-video">
+                        <video controls preload="none" playsinline poster="images/tkm-drone-survey-poster.jpg">
+                            <source src="images/tkm-drone-survey.mp4" type="video/mp4">
+                        </video>
+                    </figure>
+                    <figure class="tkm-fig" data-full="images/tkm-field-06.jpg">
+                        <img src="images/tkm-field-06.jpg" width="1400" height="1050" loading="lazy" alt="Earthworks and drainage works at sunset">
+                    </figure>
+                    <figure class="tkm-fig" data-full="images/tkm-field-07.jpg">
+                        <img src="images/tkm-field-07.jpg" width="1050" height="1400" loading="lazy" alt="Gyrocopter on an airstrip">
+                    </figure>
+                    <figure class="tkm-fig" data-full="images/tkm-field-08.jpg">
+                        <img src="images/tkm-field-08.jpg" width="1050" height="1400" loading="lazy" alt="Surveyor with a total station beside a paved road">
+                    </figure>
+                    <figure class="tkm-fig" data-full="images/tkm-field-09.jpg">
+                        <img src="images/tkm-field-09.jpg" width="1050" height="1400" loading="lazy" alt="Surveyor with a GNSS rover on a control point">
+                    </figure>
+                    <figure class="tkm-fig" data-full="images/tkm-field-10.jpg">
+                        <img src="images/tkm-field-10.jpg" width="1050" height="1400" loading="lazy" alt="Surveyor with a GNSS rover next to a road">
+                    </figure>
+                    <figure class="tkm-fig" data-full="images/tkm-field-11.jpg">
+                        <img src="images/tkm-field-11.jpg" width="1050" height="1400" loading="lazy" alt="Survey team on a concrete structure site">
+                    </figure>
+                    <figure class="tkm-fig" data-full="images/tkm-field-12.jpg">
+                        <img src="images/tkm-field-12.jpg" width="1050" height="1400" loading="lazy" alt="Total station set up at a treatment works">
+                    </figure>
+                    <figure class="tkm-fig" data-full="images/tkm-field-13.jpg">
+                        <img src="images/tkm-field-13.jpg" width="1050" height="1400" loading="lazy" alt="Industrial control panels in a corridor">
+                    </figure>
+                    </div>
+                </div>
+            </section>
+
+            <!-- call to action -->
+            <section class="tkm-cta">
+                <div class="container tkm-cta-inner">
+                    <div>
+                        <h2>Ready to start your project?</h2>
+                        <p>Call us on 083 400 8495 or send us an email.</p>
+                    </div>
+                    <div>
+                        <a class="tkm-btn tkm-btn-white" href="tel:0834008495">Call Us</a>
+                        <a class="tkm-btn tkm-btn-ghost" href="contactus.html">Request a Service</a>
+                    </div>
+                </div>
+            </section>
         </div>
         <!-- Content END-->
-        <!-- Footer -->
         <footer class="site-footer">
             <div class="footer-top">
                 <div class="container">
@@ -206,7 +397,7 @@
                                     <li><a class="fa fa-facebook"></a></li>
                                     <li><a class="fa fa-twitter"></a></li>
                                     <li><a class="fa fa-linkedin"></a></li>
-                                    <li><a class="fa fa-facebook"></a></li>
+                                    <li><a class="fa fa-whatsapp"></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -236,28 +427,41 @@
                     </div>
                 </div>
             </div>
+            <div class="footer-bottom">&copy; 2026 TKM Surveying. All rights reserved.</div>
         </footer>
-        <!-- Footer END-->
         <button class="scroltop fa fa-arrow-up"></button>
     </div>
-    <!-- JavaScript  files ========================================= -->
-    <script src="js/jquery.min.js"></script><!-- JQUERY.MIN JS -->
-    <script src="plugins/bootstrap/js/popper.min.js"></script><!-- BOOTSTRAP.MIN JS -->
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script><!-- BOOTSTRAP.MIN JS -->
-    <script src="plugins/bootstrap-select/bootstrap-select.min.js"></script><!-- FORM JS -->
-    <script src="plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script><!-- FORM JS -->
-    <script src="plugins/magnific-popup/magnific-popup.js"></script><!-- MAGNIFIC POPUP JS -->
-    <script src="plugins/counter/waypoints.min.js"></script><!-- WAYPOINTS JS -->
-    <script src="plugins/counter/counterup.min.js"></script><!-- COUNTERUP JS -->
-    <script src="plugins/imagesloaded/imagesloaded.js"></script><!-- IMAGESLOADED -->
-    <script src="plugins/masonry/masonry-3.1.4.js"></script><!-- MASONRY -->
-    <script src="plugins/masonry/masonry.filter.js"></script><!-- MASONRY -->
-    <script src="plugins/owl-carousel/owl.carousel.js"></script><!-- OWL SLIDER -->
-    <script src="js/custom.js"></script><!-- CUSTOM FUCTIONS  -->
-    <script src="js/dz.carousel.js"></script><!-- SORTCODE FUCTIONS  -->
-    <script src="plugins/switcher/js/switcher.js"></script><!-- CONTACT JS  -->
-    <script src="js/dz.ajax.js"></script><!-- CONTACT JS  -->
+    <script src="js/jquery.min.js"></script>
+    <script src="plugins/bootstrap/js/popper.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+    <script src="plugins/magnific-popup/magnific-popup.js"></script>
+    <script src="plugins/counter/waypoints.min.js"></script>
+    <script src="plugins/counter/counterup.min.js"></script>
+    <script src="plugins/imagesloaded/imagesloaded.js"></script>
+    <script src="plugins/masonry/masonry-3.1.4.js"></script>
+    <script src="plugins/masonry/masonry.filter.js"></script>
+    <script src="plugins/owl-carousel/owl.carousel.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/dz.carousel.js"></script>
+    <script src="plugins/switcher/js/switcher.js"></script>
+    <script src="js/dz.ajax.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+    <div class="tkm-lb" id="tkmLb"><span>&times;</span><img src="" alt=""></div>
+    <script>
+        (function () {
+            var lb = document.getElementById('tkmLb');
+            var img = lb.querySelector('img');
+            document.querySelectorAll('[data-full]').forEach(function (el) {
+                el.addEventListener('click', function () {
+                    img.src = el.getAttribute('data-full');
+                    lb.classList.add('on');
+                });
+            });
+            lb.addEventListener('click', function () { lb.classList.remove('on'); });
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.classList.remove('on'); });
+        })();
+    </script>
 </body>
 </html>

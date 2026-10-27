@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -22,6 +22,8 @@
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+    <!-- FONTS (new) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;700;800&display=swap">
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/plugins.css">
@@ -34,6 +36,74 @@
    
     <!-- Revolution Navigation Style -->
 
+    <style>
+        /* 15 years anniversary badge */
+        .tkm-anniv {
+            position: fixed;
+            left: 18px;
+            bottom: 18px;
+            width: 112px;
+            height: 112px;
+            z-index: 998;
+        }
+        .tkm-anniv-badge {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 25%, #4d8dff 0%, #1f5eff 45%, #0a1a3f 100%);
+            border: 4px solid #ffffff;
+            box-shadow: 0 10px 28px rgba(5, 8, 15, 0.45);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-align: center;
+            animation: tkmFloat 3.2s ease-in-out infinite;
+        }
+        .tkm-anniv-badge:before {
+            content: "";
+            position: absolute;
+            inset: 6px;
+            border-radius: 50%;
+            border: 2px dashed rgba(255, 255, 255, 0.65);
+            animation: tkmSpin 18s linear infinite;
+        }
+        .tkm-anniv-emoji { font-size: 18px; line-height: 1; margin-bottom: 2px; }
+        .tkm-anniv-num { font-family: 'Montserrat', sans-serif; font-size: 38px; font-weight: 800; line-height: 1; }
+        .tkm-anniv-txt { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; margin-top: 2px; }
+        .tkm-anniv-txt small { display: block; font-size: 8px; letter-spacing: 1px; font-weight: 600; opacity: 0.9; }
+        .tkm-anniv-close {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            width: 24px;
+            height: 24px;
+            border: 0;
+            border-radius: 50%;
+            background: #05080f;
+            color: #ffffff;
+            font-size: 14px;
+            line-height: 24px;
+            padding: 0;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .tkm-anniv-close:hover { background: #1f5eff; }
+        @keyframes tkmFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+        @keyframes tkmSpin { to { transform: rotate(360deg); } }
+        @media (prefers-reduced-motion: reduce) {
+            .tkm-anniv-badge, .tkm-anniv-badge:before { animation: none; }
+        }
+        @media (max-width: 575px) {
+            .tkm-anniv { width: 86px; height: 86px; left: 12px; bottom: 12px; }
+            .tkm-anniv-num { font-size: 28px; }
+            .tkm-anniv-emoji { font-size: 14px; }
+            .tkm-anniv-txt { font-size: 8px; letter-spacing: 1px; }
+            .tkm-anniv-txt small { display: none; }
+        }
+    </style>
 </head>
 <body id="bg">
     <div id="loading-area"></div>
@@ -54,7 +124,7 @@
                         </button>
                         <div class="extra-nav disnone-md hidden-md hidden-sm-down">
                             <div class="extra-cell">
-                                <a href="contactus.html" class="site-button white skew-secondry">Contact Us</a>
+                                <a class='site-button white skew-secondry' href="contactus.html">Contact Us</a>
                             </div>
                         </div>
                         <!-- main nav -->
@@ -109,6 +179,65 @@
                 </div>
             </div>
             <!-- Slider END -->
+
+            <!-- NEW: Intro card -->
+            <section class="tkm-intro">
+                <div class="container">
+                    <div class="tkm-intro-card">
+                        <span class="tkm-eyebrow">TKM Surveying Solutions &amp; Consulting</span>
+                        <h1>Precise surveying, geotechnical and civil consulting.</h1>
+                        <p>From site measurements to geotechnical investigations and safety consulting, we help construction and land projects start on solid ground.</p>
+                        <a class="tkm-btn tkm-btn-primary" href="services.html">Our Services</a>
+                        <a class="tkm-btn tkm-btn-ghost" href="contactus.html">Contact Us</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NEW: Services cards -->
+            <section class="tkm-services">
+                <div class="container">
+                    <div class="tkm-head">
+                        <h2>What We Do</h2>
+                        <p>Four service areas, one dependable team.</p>
+                    </div>
+                    <div class="tkm-grid">
+                        <a class="tkm-card" href="services.html">
+                            <div class="tkm-icon"><i class="fa fa-building"></i></div>
+                            <h3>Civil Consulting</h3>
+                            <p>Practical advice and support for civil engineering and construction projects.</p>
+                        </a>
+                        <a class="tkm-card" href="services.html">
+                            <div class="tkm-icon"><i class="fa fa-cubes"></i></div>
+                            <h3>Geotechnical Services</h3>
+                            <p>Understanding the ground your project is built on, before work begins.</p>
+                        </a>
+                        <a class="tkm-card" href="services.html">
+                            <div class="tkm-icon"><i class="fa fa-compass"></i></div>
+                            <h3>Surveying</h3>
+                            <p>Accurate land and site surveys you can rely on from planning to completion.</p>
+                        </a>
+                        <a class="tkm-card" href="services.html">
+                            <div class="tkm-icon"><i class="fa fa-shield"></i></div>
+                            <h3>OHS</h3>
+                            <p>Occupational health and safety support that keeps your site and people protected.</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NEW: Call to action -->
+            <section class="tkm-cta">
+                <div class="container tkm-cta-inner">
+                    <div>
+                        <h2>Ready to start your project?</h2>
+                        <p>Call us on 083 400 8495 or send us an email.</p>
+                    </div>
+                    <div>
+                        <a class="tkm-btn tkm-btn-white" href="tel:0834008495">Call Us</a>
+                        <a class="tkm-btn tkm-btn-ghost" href="mailto:info@tkmcs.co.za">Email Us</a>
+                    </div>
+                </div>
+            </section>
         </div>
         <!-- Content END-->
         <!-- Footer -->
@@ -154,8 +283,18 @@
                     </div>
                 </div>
             </div>
+            <div class="footer-bottom">&copy; 2026 TKM Surveying. All rights reserved.</div>
         </footer>
         <!-- Footer END-->
+        <!-- 15 years anniversary badge -->
+        <div class="tkm-anniv" id="tkmAnniv">
+            <button class="tkm-anniv-close" type="button" aria-label="Close" onclick="document.getElementById('tkmAnniv').style.display='none'">&times;</button>
+            <div class="tkm-anniv-badge" role="img" aria-label="Celebrating 15 years of TKM Surveying">
+                <span class="tkm-anniv-emoji">&#127882;</span>
+                <span class="tkm-anniv-num">15</span>
+                <span class="tkm-anniv-txt">YEARS<small>ANNIVERSARY</small></span>
+            </div>
+        </div>
         <!-- scroll top button -->
         <button class="scroltop fa fa-arrow-up"></button>
     </div>
